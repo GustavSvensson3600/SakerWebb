@@ -1,0 +1,90 @@
+*{
+min-height: 100%;
+margin: 0px;
+}
+#wrapper{
+ height: 90%;
+}
+center{
+  display: inline;
+}
+header{
+  padding-right: 30px;
+  width: 100%;
+  float:right;
+}
+.src{
+  width: 7em;
+  height: 7em;
+  padding-left: 3em;
+}
+.center{
+  display:inline-block;
+  padding-left: 5em;
+}
+body{
+  width:100%;
+  height: 100%;
+  background-image: url("backgroundDone.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin:0;
+  padding: 0;
+}
+h1{ color: #FF6600;
+font-size: 400%;
+margin-left: 10px;}
+
+h3{
+  color:#FF6600;
+  font-size: 400%;
+  display: inline-table;
+  margin: 0px;
+  text-align: center;
+}
+main {
+
+}
+
+#nav {
+  background-color: #fff;
+  width: 15em;
+  margin-right: 5em;
+}
+
+nav li {
+
+  list-style: none;
+  border-color: #ccc;
+  border: 1px solid #ccc;
+  display: block;
+  table-layout: fixed;
+  table width="100%";
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+nav li a{
+  font-size: 200%;
+  text-decoration: none;
+   display: block;
+   color:#FF6600;
+   font-size: 20px%;
+   text-align: center;
+}
+nav li:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+nav a:hover{
+  color:#FF6600;
+  text-decoration: none;
+}
+form{
+  padding-top: 2em;
+  float: right;
+  display:none;
+}
+input {
+  width: 10em;
+}
