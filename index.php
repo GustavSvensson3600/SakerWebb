@@ -10,29 +10,19 @@
 <body>
 	<?php
 	include('login.php'); // Includes Login Script
-	if(!isset($_SESSION['login_user'])) { ?>
-	<div id="header">
-			<img class="src" src="D-logo-org-bw.png" /img>
+	if (!isset($_SESSION['login_user'])) {
+		include('login_form.php');
+	}
+	else {
+		include('logout_form.html');
+	}
+	?>
 
-		<form style="display:inline-block; float:right" method="post">
-
-			<span>Username:</span>
-			<input id="name" name="username" type="text">
-			<span>Password:</span>
-
-			<input id="password" name="password" type="password"><br>
-			<input type="submit" value="Submit">
-		</form>
-		<h3 class="center">ZeroHelp</h3>
-	</div>
-	<?php } else { ?>
-	<?php } ?>
-
-		<main>
-			<div id="content">
-				<div class="innertube">
-				</div>
+	<main>
+		<div id="content">
+			<div class="innertube">
 			</div>
+		</div>
 
 
 		<nav id="nav">
@@ -52,7 +42,7 @@
 				<li><a href="#">Andra event</a></li>
 			</div>
 		</nav>
-		</main>
+	</main>
 </body>
 
 </html>
