@@ -9,7 +9,6 @@
 
 <body>
 	<div id="header">
-
 			<img class="src" src="D-logo-org-bw.png" /img>
 			<div class="cart">
 				<a href="cart.png"><img src="cart.png"/></a>

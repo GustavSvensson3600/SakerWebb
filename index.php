@@ -19,25 +19,6 @@
 	?>
 			</div>
 		</div>
-
-
-		<nav id="nav">
-			<div class="innertube">
-
-				<li><a href="#">Sälj biljeter</a></li>
-				<li><a href="#">Lägg till Sittningar</a></li>
-				<li><a href="#">Lägg till Events</a></li>
-
-				<li><a href="#">Listor</a></li>
-				<li><a href="#">Matpreferencer</a></li>
-				<li><a href="#">Link 3</a></li>
-
-
-				<li><a href="#">Sittningar</a></li>
-				<li><a href="#">Sittandes</a></li>
-				<li><a href="#">Andra event</a></li>
-			</div>
-		</nav>
 	</main>
 </body>
 
