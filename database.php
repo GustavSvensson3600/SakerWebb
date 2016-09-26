@@ -12,10 +12,10 @@ class Database
      */
     public function __construct($host, $userName, $password, $database)
     {
-        $this->host = $host;
-        $this->userName = $userName;
-        $this->password = $password;
-        $this->database = $database;
+        $this->host = ini_get("mysql.default.host");
+        $this->userName = ini_get("mysql.default.user");
+        $this->password = ini_get("mysql.default.password");
+        $this->database = ini_get("mysql.default.database");
     }
 
     /**
