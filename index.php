@@ -17,10 +17,6 @@
 		include('logout_form.html');
 	}
 	?>
-
-	<main>
-		<div id="content">
-			<div class="innertube">
 			</div>
 		</div>
 
