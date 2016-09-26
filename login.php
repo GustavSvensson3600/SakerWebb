@@ -3,6 +3,7 @@
 	session_start(); // Starting Session
 	$error = ''; // Variable To Store Error Message
 	//Testarray
+	//Lösenord: qwerty, password, michael, 1234567
 	$logins = array (
 		array('username' => 'Sarah', 'password' => '$2y$10$Jr1kd5a2Yo69V4RznPCimeY4SK/RPokNNDro5CeNPfgvNB1ZG2k.m', 'address' => '95 Summit Street'),
 		array('username' => 'Penny', 'password' => '$2y$10$6gVeFMlaBzOkjr2w6oDOMO/llv1EzuTceTvtx9unsjq4TrsyQUcDi', 'address' => '9828 Walnut Street'),
