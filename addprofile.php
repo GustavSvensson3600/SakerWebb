@@ -21,7 +21,7 @@
 					<label>Address :</label>
 					<input id="address" name="address" placeholder="" type="text">
 					<input name="submit" type="submit" value=" Register ">
-					<span><?php echo $error; ?></span>
+					<span><?php echo $message; ?></span>
 				</form>
 			</div>
 		</div>

@@ -11,7 +11,7 @@
 	
 	session_start();// Starting Session
 	// Storing Session
-	$login_session = $_SESSION['login_user'];
+	//$login_session = $_SESSION['login_user'];
 	$_SESSION['user_address'] = "placeholder";
 //	set_user($login_session, $mysqli);
 	if(!isset($_SESSION['user_address'])){
