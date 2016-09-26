@@ -12,7 +12,7 @@
 	include('login.php'); // Includes Login Script
 	if(!isset($_SESSION['login_user'])) { ?>
 	<div id="header">
-			<img class="src" src="D-logo-org-bw.png" /img>
+
 
 		<form style="display:inline-block; float:right" method="post">
 
@@ -26,6 +26,10 @@
 		<h3 class="center">ZeroHelp</h3>
 	</div>
 	<?php } else { ?>
+			<img class="src" src="D-logo-org-bw.png" /img>
+			<div class="cart">
+				<a href=""><img src="cart.png"/></a>
+			</div>
 	<?php } ?>
 
 		<main>
