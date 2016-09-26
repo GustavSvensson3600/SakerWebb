@@ -13,7 +13,8 @@
 
 		<main>
 			<h1> Tack för ditt köp!</h1>
-			
+				Vi på Evil corp uppskattar ditt köp och ditt stöd för vår kamp att ta över världen!
+				Köp mer och stöd mer! Lämna donnationer i form av kärnvapen, kanyes tånaglar och bradpits kalsonger.
 		</main>
 </body>
 
