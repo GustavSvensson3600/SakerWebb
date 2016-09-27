@@ -10,12 +10,13 @@ class Database
     /**
      * Constructs a database object for the specified user.
      */
-    public function __construct($host, $userName, $password, $database)
+    public function __construct()
     {
-        $this->host = ini_get("mysql.default.host");
-        $this->userName = ini_get("mysql.default.user");
-        $this->password = ini_get("mysql.default.password");
-        $this->database = ini_get("mysql.default.database");
+        $ini = parse_ini_file('php.ini');
+        $this->host = $ini['db_host'];;
+        $this->userName = $ini['db_user'];;
+        $this->password = $ini['db_password'];;
+        $this->database = $ini['db_name'];
     }
 
     /**
@@ -107,11 +108,14 @@ class Database
      * @return returns a vector containing salt and hashed password of userName exists in the database,
      *          returns an empty vector otherwise.
      */
-    public function getUser($name) 
+    public function getUserHash($name) 
     {
-        $sql = "SELECT salt, passWord FROM Users WHERE userName = ?";
+        $sql = "SELECT salt, pass FROM Users WHERE userName = ?";
         $result = $this->executeQuery($sql, array($name));
-        return $result[0];
+        $result = $result[0];
+        $hash = $result['salt'];
+        $hash .= $result['pass'];
+        return $hash;
     }
 
     /**
@@ -127,3 +131,4 @@ class Database
         $result = $this->executeUpdate($sql, array($name, $salt, $passWord));
         return count($result) == 1;
     }
+}

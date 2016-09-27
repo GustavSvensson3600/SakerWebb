@@ -1,8 +1,10 @@
 
 <?php
-	session_start(); // Starting Session
-	$error = ''; // Variable To Store Error Message
-	//Testarray
+	require_once('database.php');
+	session_start();
+	$db = new Database();
+	$_SESSION['db'] = $db;
+	$error = "";
 	//Lösenord: qwerty, password, michael, 1234567
 	$logins = array (
 		array('username' => 'Sarah', 'password' => '$2y$10$Jr1kd5a2Yo69V4RznPCimeY4SK/RPokNNDro5CeNPfgvNB1ZG2k.m', 'address' => '95 Summit Street'),
@@ -17,18 +19,12 @@
 			$error = "Username or Password is invalid";
 		}
 		else {
-			// Define $username and $password
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			// Mysql php code
-		/*	$mysqli = new mysqli("localhost", "user", "password", "database");
-			if ($mysqli->connect_errno) {
-				echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-			}
-			$hash = get_user_hash($username, $mysqli);
-			*/
-			$hash = get_user($username)['password'];
-			// Ok?
+			$db->openConnection();
+			$hash = $db->getUserHash($username);
+			$db->closeConnection();
+
 			if (password_verify($password, $hash)) {
 				$_SESSION['login_user'] = $username; // Initializing Session
 				header("location: index.php"); // Redirecting To Other Page
