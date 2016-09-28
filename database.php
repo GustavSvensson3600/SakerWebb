@@ -125,10 +125,10 @@ class Database
      * @param passWord : The hashed password of the new User
      * @return true if the user was inserted into the databse, false otherwise.
      */
-    public function createUser($name, $salt, $passWord) 
+    public function createUser($name, $passWord, $adress) 
     {
-        $sql = "INSERT INTO Users (userName, salt, passWord) VALUES (?, ?, ?)";
-        $result = $this->executeUpdate($sql, array($name, $salt, $passWord));
+        $sql = "INSERT INTO Users (userName, pass, adress) VALUES (?, ?, ?)";
+        $result = $this->executeUpdate($sql, array($name, $passWord, $adress));
         return count($result) == 1;
     }
 }

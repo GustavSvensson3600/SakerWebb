@@ -8,8 +8,7 @@ drop table if exist Items;
 /* Create the tables we need with the right format*/
 create table Users (
 userName varchar(100) not null,
-passWord varchar(100) not null,
-salt varchar(20) not null,
+passWord varchar(256) not null,
 adress varchar(100) not null,
 status int default 0,
 primary key (userName)
