@@ -23,6 +23,7 @@
 			$result = $db->createUser($_POST['username'], $hash, $_POST['adress']);
 			$db->closeConnection();
 			if($result) {
+				$_SESSION['login_user'] = $_POST['username'];
 				header("Location: index.php");
 			}
 			echo "Unexpected database error";
