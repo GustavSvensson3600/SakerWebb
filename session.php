@@ -1,15 +1,12 @@
 <?php
+if (session_id() == "") {
+	session_start(); 
+	require_once('database.php');
+	$db = new Database();
+	$_SESSION['db'] = $db;
+}
 	
-	//File should set user-specific information
-	// Establishing Connection with Server by passing server_name, user_id and password as a parameter
-	// Mysql php code
-/*	$mysqli = new mysqli("localhost", "user", "password", "database");
-	if ($mysqli->connect_errno) {
-		echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-	}
-	*/
-	
-	session_start();// Starting Session
+	/*
 	// Storing Session
 	//$login_session = $_SESSION['login_user'];
 	$_SESSION['user_address'] = "placeholder";
@@ -28,4 +25,5 @@
 		$stmt->fetch();
 		$stmt->close();
 	}
+	*/
 ?>

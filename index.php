@@ -1,3 +1,4 @@
+<?php include("session.php");?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +10,6 @@
 
 <body>
 	<?php
-	require_once('database.php');
-	session_start();
-	$db = new Database();
-	$_SESSION['db'] = $db;
 	include('login.php'); // Includes Login Script
 	if (!isset($_SESSION['login_user'])) {
 		include('login_form.php');

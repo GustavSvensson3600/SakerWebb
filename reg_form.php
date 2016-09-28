@@ -22,7 +22,7 @@
 
     <span>Re-enter Password:</span>
     <div></div>
-    <input id="password2" name="password" type="password"><br>
+    <input id="password2" name="password2" type="password"><br>
     <div></div>
 
     <input name="submit" type="submit" value="Submit">

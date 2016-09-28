@@ -1,3 +1,4 @@
+<?php include("session.php");?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
 			//Ok we accept this
 			//åhh vi får kolla på detta
 			$hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+			$db = $_SESSION['db'];
 			$db->openConnection();
 			$result = $db->createUser($_POST['username'], $hash, $_POST['adress']);
 			$db->closeConnection();
