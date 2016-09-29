@@ -6,20 +6,17 @@
   $result = $db->getItems();
   $db->closeConnection();
 
-  //$result = getItems();
-  $last = count($result) -1;
-  print $result;
-
-  /*foreach ($result as $row) {
-    <div>
-      echo"<h2> Item: </h2>";
-      echo $row['itemName'];
-      echo"<h3> Description: </h3>";
-      echo $row['description'];
-      echo"<h2> Price: </h2>";
-      echo $row[price];
-    </div>
-  }*/
+  $countdown = count($result);
+  $k=0;
+  foreach ($result as $row) {
+    echo $row['itemName'];
+    echo "<div></div>";
+    echo $row['description'];
+    echo "<div></div>";
+    echo $row['price'];
+    echo " :- inkl moms";
+    echo "<div></div>";
+  }
 
   ?>
 </div>
