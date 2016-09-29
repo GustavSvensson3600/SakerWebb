@@ -1,6 +1,7 @@
 <?php
 if (session_id() == "") {
 	session_start(); 
+	$_SESSION['itemArray'] = array();
 	require_once('database.php');
 	$db = new Database();
 	$_SESSION['db'] = $db;
