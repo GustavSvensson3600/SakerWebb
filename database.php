@@ -127,7 +127,7 @@ class Database
      */
     public function createUser($name, $passWord, $adress)
     {
-        $sql = "INSERT INTO Users (userName, pass, adress) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO Users (userName, passWord, address) VALUES (?, ?, ?)";
         $result = $this->executeUpdate($sql, array($name, $passWord, $adress));
         return count($result) == 1;
     }
