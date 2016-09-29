@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Rigster </title>
+	<meta charset="ISO-8859-1">
+	<title>Register </title>
 	<link rel="stylesheet" href="Css.css">
 
 </head>

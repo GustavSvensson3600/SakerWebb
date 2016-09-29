@@ -3,7 +3,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Stuff 'N Things </title>
+	<title>Celebreties Perks Store </title>
 	<link rel="stylesheet" href="Css.css">
 
 </head>

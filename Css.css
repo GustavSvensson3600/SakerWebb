@@ -31,6 +31,7 @@ body{
   margin:0;
   padding: 0;
 }
+
 h1{ color: #FF6600;
 font-size: 400%;
 margin-left: 10px;}
@@ -82,9 +83,19 @@ nav a:hover{
 }
 form{
   padding-top: 2em;
-  
+
   display:none;
 }
 input {
   width: 10em;
+}
+#items {
+  border: 2px solid black;
+  background: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    float: left;
+
 }
