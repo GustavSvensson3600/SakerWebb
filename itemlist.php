@@ -5,6 +5,7 @@
   $result = $db->getItems();
   $db->closeConnection();
 
+
   $countdown = count($result);
   $k=0;
   foreach ($result as $row) {
@@ -19,7 +20,9 @@
     echo " :- inkl moms";
     echo "<br></br>";
     ?>
-    <button onclick="myFunction()">Buy!</button>
+    <form style="display:inline-block; float:right" method="post" action="addItem.php">
+    <input name="<?php $row['itemNumber']?>" type="submit" value="Buy!">
+  </form>
     <?php
     ?>
   </div>
