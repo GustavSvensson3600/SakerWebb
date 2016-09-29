@@ -1,14 +1,12 @@
 <?php include("session.php");?>
 <div id="body">
   <?php
-  include("database.php");
-
   $db = $_SESSION['db'];
   $db->openConnection();
   $result = $db->getItems();
   $db->closeConnection();
 
-  $result = getItems();
+  //$result = getItems();
   $last = count($result) -1;
   print $result;
 
