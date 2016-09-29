@@ -108,7 +108,7 @@ class Database
      * @return returns a vector containing salt and hashed password of userName exists in the database,
      *          returns an empty vector otherwise.
      */
-    public function getUserHash($name) 
+    public function getUserHash($name)
     {
         $sql = "SELECT salt, pass FROM Users WHERE userName = ?";
         $result = $this->executeQuery($sql, array($name));
@@ -125,10 +125,20 @@ class Database
      * @param passWord : The hashed password of the new User
      * @return true if the user was inserted into the databse, false otherwise.
      */
-    public function createUser($name, $passWord, $adress) 
+    public function createUser($name, $passWord, $adress)
     {
         $sql = "INSERT INTO Users (userName, pass, adress) VALUES (?, ?, ?)";
         $result = $this->executeUpdate($sql, array($name, $passWord, $adress));
         return count($result) == 1;
+    }
+
+    /**
+    * Retunrs all items from the database.
+    */
+    public function getItems()
+    {
+      $sql = "SELECT * from Items";
+      $result = $this->executeQuery($sql);
+      return $result;
     }
 }

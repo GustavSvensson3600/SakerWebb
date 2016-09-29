@@ -17,6 +17,7 @@
 	else {
 		include('logout_form.html');
 	}
+	include('itemlist.php');
 	?>
 			</div>
 		</div>

@@ -2,8 +2,8 @@
 creating new ones. */
 
 /* drop table if exists tableName;*/
-drop table if exist Users;
-drop table if exist Items;
+drop table if exists Users;
+drop table if exists Items;
 
 /* Create the tables we need with the right format*/
 create table Users (

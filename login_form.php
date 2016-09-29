@@ -18,5 +18,5 @@
 			</form>
 
 
-			<h3 class="center">ZeroHelp</h3>
+			<h3 class="center">Celebreties Perk List</h3>
 		</div>
