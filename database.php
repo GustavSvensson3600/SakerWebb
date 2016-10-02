@@ -13,9 +13,9 @@ class Database
     public function __construct()
     {
         $ini = parse_ini_file('php.ini');
-        $this->host = $ini['db_host'];;
-        $this->userName = $ini['db_user'];;
-        $this->password = $ini['db_password'];;
+        $this->host = $ini['db_host'];
+        $this->userName = $ini['db_user'];
+        $this->password = $ini['db_password'];
         $this->database = $ini['db_name'];
     }
 
@@ -110,12 +110,24 @@ class Database
      */
     public function getUserHash($name)
     {
-        $sql = "SELECT salt, pass FROM Users WHERE userName = ?";
+        $sql = "SELECT passWord FROM Users WHERE userName = ?";
         $result = $this->executeQuery($sql, array($name));
-        $result = $result[0];
-        $hash = $result['salt'];
-        $hash .= $result['pass'];
+		if ($result == NULL)
+			return "";
+		$result = $result[0];
+		$hash = $result['passWord'];
         return $hash;
+    }
+	
+	public function getUserAddress($name)
+    {
+        $sql = "SELECT address FROM Users WHERE userName = ?";
+        $result = $this->executeQuery($sql, array($name));
+		if ($result == NULL)
+			return "";
+		$result = $result[0];
+		$address = $result['address'];
+        return $address;
     }
 
     /**
@@ -125,12 +137,26 @@ class Database
      * @param passWord : The hashed password of the new User
      * @return true if the user was inserted into the databse, false otherwise.
      */
-    public function createUser($name, $passWord, $adress)
+    public function createUser($name, $passWord, $address)
     {
         $sql = "INSERT INTO Users (userName, passWord, address) VALUES (?, ?, ?)";
-        $result = $this->executeUpdate($sql, array($name, $passWord, $adress));
+        $result = $this->executeUpdate($sql, array($name, $passWord, $address));
         return count($result) == 1;
     }
+	
+	public function updateUser($username, $address, $hash = null) 
+	{
+		if ($hash == null) {
+			$sql = "UPDATE Users SET address = ? WHERE userName = ?";
+			$result = $this->executeUpdate($sql, array($address, $username));
+			return count($result) == 1;
+		}
+        $sql = "UPDATE Users SET passWord = ?, address = ? WHERE userName = ?";
+        $result = $this->executeUpdate($sql, array($hash, $address, $username));
+        return count($result) == 1;		
+	}
+	
+	
 
     /**
     * Retunrs all items from the database.

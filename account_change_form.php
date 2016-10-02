@@ -1,12 +1,12 @@
 <?php
 	include "session.php";
-	include "register.php";
+	include "account_change.php";
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="ISO-8859-1">
-		<title>Register </title>
+		<title>Account </title>
 		<link rel="stylesheet" href="Css.css">
 	</head>
 	<body>
@@ -19,12 +19,12 @@
 		<center><form style="display:inline-block; float:center" method="post">
 		<span>Username:</span>
 		<div></div>
-		<input id="name" name="username" type="text">
+		<?php echo $username; ?>
 		<div></div>
 
 		<span>Address:</span>
 		<div></div>
-		<input id="address" name="address" type="text">
+		<input id="address" name="address" type="text" value="<?php echo $address ?>">
 		<div></div>
 
 		<span>Password:</span>

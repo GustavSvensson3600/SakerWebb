@@ -1,4 +1,4 @@
-<?php include("session.php");?>
+
   <?php
   $db = $_SESSION['db'];
   $db->openConnection();

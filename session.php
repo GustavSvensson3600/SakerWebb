@@ -1,11 +1,15 @@
 <?php
-if (session_id() == "") {
-	session_start(); 
-	$_SESSION['itemArray'] = array();
+
+/* Fyller if-satsen någon funktion? */
+//if (session_id() == "") {
+	session_start();
+	/* Vad är denna till för */
+	//$_SESSION['itemArray'] = array();
 	require_once('database.php');
 	$db = new Database();
 	$_SESSION['db'] = $db;
-}
+	
+//}
 	
 	/*
 	// Storing Session

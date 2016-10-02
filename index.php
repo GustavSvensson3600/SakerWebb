@@ -3,25 +3,28 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Celebreties Perks Store </title>
+	<title>Celebrities Perks Store </title>
 	<link rel="stylesheet" href="Css.css">
 
 </head>
 
 <body>
-	<?php
-	include('login.php'); // Includes Login Script
-	if (!isset($_SESSION['login_user'])) {
-		include('login_form.php');
-	}
-	else {
-		include('logout_form.html');
-	}
-	include('itemlist.php');
-	?>
-			</div>
-		</div>
-	</main>
+	<div id="header">
+		<img class="src" src="D-logo-org-bw.png" /img>
+		<?php
+		if (!isset($_SESSION['login_user'])) {
+			include('login.php'); // Includes Login Script
+			include('login_form.php');
+		}
+		else {
+			include('logout.php');
+			include('logout_form.html');
+		}
+		include('itemlist.php');
+		?>
+	
+		<h3 class="center">Celebrities Perks Store</h3>
+	</div>
 </body>
 
 </html>

@@ -1,7 +1,5 @@
-		<div id="header">
-				<img class="src" src="D-logo-org-bw.png" /img>
 
-			<form style="display:inline-block; float:right" method="post" action="register.php">
+			<form style="display:inline-block; float:right" method="post">
 
 				<span>Username:</span>
 				<input id="name" name="username" type="text">
@@ -12,11 +10,10 @@
 				<input name="submit" type="submit" value="Submit">
 
 				<span>Not a member?:</span>
-				<input name="reg" type="submit" value="Register">
-
-				<span><?php echo $error; ?></span>
+				
+				<input name="register" type ="submit" value="Register" />
+				
+				<br>
+				<span><?php echo $error ?></span>
+				
 			</form>
-
-
-			<h3 class="center">Celebreties Perks Store</h3>
-		</div>
