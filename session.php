@@ -10,7 +10,7 @@
 	$db = new Database();
 	$parser = new Parser();
 	$_SESSION['db'] = $db;
-	$_SESSION['parser'];
+	$_SESSION['parser'] = $parser;
 	
 //}
 	
