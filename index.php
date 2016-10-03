@@ -20,11 +20,12 @@
 			include('logout.php');
 			include('logout_form.html');
 		}
-		include('itemlist.php');
+		
 		?>
 	
 		<h3 class="center">Celebrities Perks Store</h3>
 	</div>
+	<?php include('itemlist.php');?>
 </body>
 
 </html>
