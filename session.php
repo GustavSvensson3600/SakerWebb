@@ -1,5 +1,7 @@
 <?php
 
+include "csrf.php";
+
 /* Fyller if-satsen någon funktion? */
 //if (session_id() == "") {
 	session_start();

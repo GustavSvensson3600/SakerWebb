@@ -4,7 +4,7 @@
 	if (isset($_POST['register']))
 		header("location: reg_form.php");
 	
-	if (isset($_POST['submit'])) {
+	if (isset($_POST['submit']) && $_POST['CSRFToken'] === get_token()) {
 		if (empty($_POST['username']) || empty($_POST['password'])) {
 			$error = "Username or Password is invalid";
 		}

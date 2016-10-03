@@ -13,6 +13,8 @@
 				
 				<input name="register" type ="submit" value="Register" />
 				
+				<input name="CSRFToken" type="hidden" value="<?php echo get_token(); ?>">
+				
 				<br>
 				<span><?php echo $error ?></span>
 				

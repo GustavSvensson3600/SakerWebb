@@ -4,7 +4,7 @@
 	
 	$message = ""; // Variable To Store message Message
 	
-	if (isset($_POST['submit'])) {
+	if (isset($_POST['submit']) && $_POST['CSRFToken'] === get_token()) {
 		
 		$username = $_POST['username'];
 		$password = $_POST['password'];

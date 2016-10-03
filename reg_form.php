@@ -39,6 +39,7 @@
 
 		<input name="submit" type="submit" value="Submit">
 
+		<input name="CSRFToken" type="hidden" value="<?php echo get_token(); ?>">
 		<br>
 		<span><?php echo $message ?></span>
 		</form></center>

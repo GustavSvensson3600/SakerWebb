@@ -9,7 +9,7 @@
 		$message = ""; // Variable To Store message Message
 		$password_change = false;
 		
-		if (isset($_POST['submit'])) {
+		if (isset($_POST['submit']) && $_POST['CSRFToken'] === get_token()) {
 			
 			$password = $_POST['password'];
 			$password2 = $_POST['password2'];
