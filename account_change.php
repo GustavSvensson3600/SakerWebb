@@ -38,6 +38,8 @@
 				}
 				else {
 					$db->openConnection();
+					$parser = $_SESSION('parser');
+					$address = $parser->htmlParse($address);
 					$result = $db->updateUser($username, $address);
 					$db->closeConnection();			
 				}

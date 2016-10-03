@@ -28,6 +28,9 @@
 				return;
 			}
 			$hash = password_hash($password, PASSWORD_DEFAULT);
+			$parser = $_SESSION['parser'];
+			$username = $parser->htmlParse($username);
+			$address = $parser->htmlParse($address);
 			$result = $db->createUser($username, $hash, $address);
 			$db->closeConnection();
 			

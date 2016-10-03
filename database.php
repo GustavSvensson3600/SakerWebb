@@ -94,7 +94,6 @@ class Database
             $stmt = $this->conn->prepare($query);
             $stmt->execute($param);
             $count = $stmt->rowCount();
-            //$id = $stmt->lastInsertId();
         } catch (PDOException $e) {
             $error = "*** Internal Error: " . $e->getMessage() . "<p>" . $query;
             die($error);

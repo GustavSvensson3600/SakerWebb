@@ -11,15 +11,14 @@
 		else {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			
 			$db = $_SESSION['db'];
 			$db->openConnection();
 			$hash = $db->getUserHash($username);
 			$db->closeConnection();
-			//$hash = '$2y$10$Jr1kd5a2Yo69V4RznPCimeY4SK/RPokNNDro5CeNPfgvNB1ZG2k.m';
-
 			if (password_verify($password, $hash)) {
 				session_regenerate_id();
+				$parser = $_SESSION['parser'];
+				$username = $parser->htmlParse();
 				$_SESSION['login_user'] = $username; // Initializing Session
 				$db->openConnection();
 				$_SESSION['user_address'] = $db->getUserAddress($username);
