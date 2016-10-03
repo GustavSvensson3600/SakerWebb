@@ -18,7 +18,7 @@
 			if (password_verify($password, $hash)) {
 				session_regenerate_id();
 				$parser = $_SESSION['parser'];
-				$username = $parser->htmlParse();
+				$username = $parser->htmlParse($username);
 				$_SESSION['login_user'] = $username; // Initializing Session
 				$db->openConnection();
 				$_SESSION['user_address'] = $db->getUserAddress($username);
