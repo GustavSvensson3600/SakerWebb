@@ -1,5 +1,11 @@
 
 <?php
+    $message = "";
+	if (isset($_SESSION['globalMessage'])) {
+		$message = $_SESSION['globalMessage'];
+		$_SESSION['globalMessage'] = "";
+	}
+	
 	if (isset($_POST['logout'])) {
 		session_start();
 		// Destroying All Sessions

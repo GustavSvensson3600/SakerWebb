@@ -6,6 +6,7 @@
 	
 		$username = $_SESSION['login_user'];
 		$address = $_SESSION['user_address'];
+		$parser = $_SESSION['parser'];
 		$message = ""; // Variable To Store message Message
 		$password_change = false;
 		
@@ -14,21 +15,17 @@
 			$password = $_POST['password'];
 			$password2 = $_POST['password2'];
 			$address = $_POST['address'];
+			$address = $parser->htmlParse($address);
 			
 			if (empty($address)) {
 				$message = "Address is needed";
 			}
 			
-			elseif (!empty($password)) {
-				$password_change = true;
-				if ($message = password_check($password, $password2))
-					return;
+			elseif ($password_change = !empty($password) && $message = password_check($password, $password2)) {
 			}
 			
 			else {
-				//Ok we accept this
-				//åhh vi får kolla på detta
-				$db = $_SESSION['db'];
+				$db = new Database();
 				
 				if ($password_change) {
 					$hash = password_hash($password, PASSWORD_DEFAULT);
@@ -38,16 +35,14 @@
 				}
 				else {
 					$db->openConnection();
-					$parser = $_SESSION('parser');
-					$address = $parser->htmlParse($address);
 					$result = $db->updateUser($username, $address);
 					$db->closeConnection();			
 				}
 				
 				if ($result) {
-					//$message = "User has been created";
-					//header("location: account_change_form.php");
-					$message = "User has been updated";
+					$_SESSION['globalMessage'] = "User has been updated";
+					header("location: index.php");
+					//$message = "User has been updated";
 				}
 				else {
 					$message = "User could not be updated";

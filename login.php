@@ -11,22 +11,29 @@
 		else {
 			$username = $_POST['username'];
 			$password = $_POST['password'];
-			$db = $_SESSION['db'];
+			//$db = $_SESSION['db'];
+			$db = new Database();
+			
 			$db->openConnection();
-			$hash = $db->getUserHash($username);
-			$db->closeConnection();
-			if (password_verify($password, $hash)) {
-				session_regenerate_id();
-				$parser = $_SESSION['parser'];
-				$username = $parser->htmlParse($username);
-				$_SESSION['login_user'] = $username; // Initializing Session
-				$db->openConnection();
-				$_SESSION['user_address'] = $db->getUserAddress($username);
+			if ($db->getUserStatus($username) > 3) {
 				$db->closeConnection();
-				header("location: index.php"); // Redirecting To Other Page
-			} 
+				$error = "Your account is locked";
+			}
 			else {
-				$error = "Username or Password is invalid";
+				$hash = $db->getUserHash($username);
+				if (password_verify($password, $hash)) {
+					session_regenerate_id();
+					$_SESSION['login_user'] = $username; // Initializing Session
+					$_SESSION['user_address'] = $db->getUserAddress($username);
+					$db->resetStatus($username);
+					$db->closeConnection();
+					header("location: index.php"); // Redirecting To Other Page
+				} 
+				else {
+					$db->incrementStatus($username);
+					$db->closeConnection();
+					$error = "Username or Password is invalid";
+				}
 			}
 		}
 	}

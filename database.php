@@ -155,6 +155,30 @@ class Database
         return count($result) == 1;		
 	}
 	
+	public function incrementStatus($username) 
+	{
+		$sql = "UPDATE Users SET status = status+1  WHERE userName = ?";
+		$result = $this->executeUpdate($sql, array($username));
+		return count($result) == 1;
+	}
+	
+	public function resetStatus($username) 
+	{
+		$sql = "UPDATE Users SET status = 0  WHERE userName = ?";
+		$result = $this->executeUpdate($sql, array($username));
+		return count($result) == 1;
+	}
+	
+	public function getUserStatus($name) 
+	{
+		$sql = "SELECT status FROM Users WHERE userName = ?";
+        $result = $this->executeQuery($sql, array($name));
+		if ($result == NULL)
+			return "";
+		$result = $result[0];
+		$status = $result['status'];
+        return $status;
+	}
 	
 
     /**

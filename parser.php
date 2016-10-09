@@ -7,7 +7,7 @@ class Parser
 
     public function htmlParse($string)
     {
-        $strig =  htmlspecialchars ($string , ENT_COMPAT, true );
+        $strig =  htmlspecialchars($string);//htmlspecialchars ($string , ENT_COMPAT, true );
         return $strig;
     }
 }

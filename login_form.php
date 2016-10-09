@@ -16,6 +16,6 @@
 				<input name="CSRFToken" type="hidden" value="<?php echo get_token(); ?>">
 				
 				<br>
-				<span><?php echo $error ?></span>
+				<span><?php echo $error; ?></span>
 				
 			</form>

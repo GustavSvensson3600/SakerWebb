@@ -10,6 +10,7 @@
 		$password = $_POST['password'];
 		$password2 = $_POST['password2'];
 		$address = $_POST['address'];
+		$parser = $_SESSION['parser'];
 		
 		if (empty($username) || empty($password) || empty($password2) || empty($address)) {
 			$message = "All fields need input";
@@ -28,7 +29,6 @@
 				return;
 			}
 			$hash = password_hash($password, PASSWORD_DEFAULT);
-			$parser = $_SESSION['parser'];
 			$username = $parser->htmlParse($username);
 			$address = $parser->htmlParse($address);
 			$result = $db->createUser($username, $hash, $address);
