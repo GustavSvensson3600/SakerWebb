@@ -198,7 +198,8 @@ class Database
         if(count>0)
         {
           $sql = "SELECT * FROM Items where itemNumber = ?";
-            for (int $i = 0; $i<count-1; $i++)
+          $i = 0;
+            for ($i; $i<$count-1; $i++)
             {
                 $sql .= $sql . " | ?";
             }
