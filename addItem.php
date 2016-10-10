@@ -1,7 +1,12 @@
 <?php
 	include("session.php");
-	$itemArray = $_SESSION['itemArray'];
-	array_push($itemArray, $_POST["name"]);
+	if(isset($_SESSION['itemArray'])){
+		$itemArray = $_SESSION['itemArray'];
+	} else {
+		$itemArray = array();
+	}
+
+	array_push($itemArray, $_POST["buy"]);
 	$_SESSION['itemArray'] = $itemArray;
 	header("Location: index.php");
  ?>

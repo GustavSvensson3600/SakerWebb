@@ -1,11 +1,31 @@
+<?php include("session.php");?>
 <html>
 <head>
 
 </head>
 <body>
+  Your Items: <br><br>
 <div class="checkout">
   <div class="items">
-    <? php ?>
+    <?php 
+    $db = $_SESSION['db'];
+    $db->openConnection();
+    $array = $_SESSION['itemArray'];
+    $items = $db->getUserItems($array);
+    $db->closeConnection();
+
+    foreach($items as $item)
+    {
+
+      $string = "ItemName: ";
+      $string .= $item['itemName'];
+      $string .= "    Price: ";
+      $string .= $item['price'];
+      echo $string;
+      ?><br><br><?php
+    }
+    
+    ?>
   </div>
   <div class="forms">
     <h3>Compleate putches</h3>

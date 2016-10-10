@@ -194,15 +194,15 @@ class Database
     public function getUserItems($itemNumbers)
     {
         $count = count($itemNumbers);
-        if(count>0)
+        if($count>0)
         {
           $sql = "SELECT * FROM Items where itemNumber = ?";
-          $i = 0;
-            for ($i; $i<$count-1; $i++)
+          $i = 1;
+            for ($i; $i<$count; $i++)
             {
-                $sql .= $sql . " | ?";
+                $sql .= "OR itemNumber = ?";
             }
-            $sql .= $sql . ";";
+            $sql .= ";";
             $result = $this->executeQuery($sql, $itemNumbers);
             return $result;
         }

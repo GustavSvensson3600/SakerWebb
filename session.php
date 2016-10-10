@@ -6,7 +6,6 @@ include "csrf.php";
 //if (session_id() == "") {
 	session_start();
 	/* Vad är denna till för */
-	$_SESSION['itemArray'] = array();
 	require_once('parser.php');
 	require_once('database.php');
 	$db = new Database();
