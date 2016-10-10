@@ -31,13 +31,13 @@
   </div>
   <div class="forms">
     <h3>Complete purchase</h3>
-    <form>
+    <form action="receipt.php">
       Card number: <input type="text" name="CardNbr">
       Card Holder:  <input type="text" name="CardHolder"><br>
       year:  <input type="number" name="year">
       Month: <input type="number" name="Month"><br>
       CVC: <input type="number" name="CVC">
-      <input type="button" value="submit" formaction="receipt.php">
+      <input type="submit" value="submit">
     </form>
   </div>
 </div>

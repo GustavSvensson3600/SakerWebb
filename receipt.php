@@ -1,3 +1,4 @@
+<?php include("session.php");?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,13 +15,13 @@
     $db->closeConnection();
     foreach($items as $item)
     {
-      $string = "ItemName: ";
+      $string = $item['itemName'];
       echo $string;
       ?><br><?php
     } 
 	?>
-	<form>
-		<input type="button" formaction="index.php" value="Return">
+	<form action="receipt.php">
+		<input type="submit" value="Return">
 	</form>
 </body>
 
