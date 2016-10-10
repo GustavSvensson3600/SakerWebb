@@ -1,4 +1,4 @@
-
+<ul>
   <?php
   $db = $_SESSION['db'];
   $db->openConnection();
@@ -7,9 +7,10 @@
 
   $countdown = count($result);
   $k=0;
+
   foreach ($result as $row) {
     ?>
-    <div id="items">
+    <li><div id="items">
     <?php
     $number = strval($row['itemNumber']);
     echo $row['itemName'];
@@ -26,7 +27,8 @@
   </form>
     <?php
     ?>
-  </div>
+  </div></li>
   <?php
   }
   ?>
+</ul>
