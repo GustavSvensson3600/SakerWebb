@@ -8,9 +8,10 @@
 
   $countdown = count($result);
   $k=0;
+  <ul>
   foreach ($result as $row) {
     ?>
-    <div id="items">
+    <li><div id="items">
     <?php
     echo $row['itemName'];
     echo "<br></br>";
@@ -25,7 +26,8 @@
   </form>
     <?php
     ?>
-  </div>
+  </div></li>
+</ul>
   <?php
   }
   ?>
