@@ -7,7 +7,7 @@
   Your Items: <br><br>
 <div class="checkout">
   <div class="items">
-    <?php 
+    <?php
     $db = $_SESSION['db'];
     $db->openConnection();
     $array = $_SESSION['itemArray'];
@@ -37,7 +37,7 @@
       year:  <input type="number" name="year">
       Month: <input type="number" name="Month"><br>
       CVC: <input type="number" name="CVC">
-      <input type="button" value="Submit" formaction="receipt.php">
+      <input type="button" value="submit" formaction="receipt.php">
     </form>
   </div>
 </div>
