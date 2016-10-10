@@ -21,7 +21,7 @@
 				$message = "Address is needed";
 			}
 			
-			elseif ($password_change = !empty($password) && $message = password_check($password, $password2)) {
+			elseif (($password_change = !empty($password)) && ($message = password_check($password, $password2))) {
 			}
 			
 			else {
