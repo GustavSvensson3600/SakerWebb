@@ -142,8 +142,8 @@ class Database
         $result = $this->executeUpdate($sql, array($name, $passWord, $address));
         return count($result) == 1;
     }
-	
-	public function updateUser($username, $address, $hash = null) 
+
+	public function updateUser($username, $address, $hash = null)
 	{
 		if ($hash == null) {
 			$sql = "UPDATE Users SET address = ? WHERE userName = ?";
@@ -152,24 +152,24 @@ class Database
 		}
         $sql = "UPDATE Users SET passWord = ?, address = ? WHERE userName = ?";
         $result = $this->executeUpdate($sql, array($hash, $address, $username));
-        return count($result) == 1;		
+        return count($result) == 1;
 	}
-	
-	public function incrementStatus($username) 
+
+	public function incrementStatus($username)
 	{
 		$sql = "UPDATE Users SET status = status+1  WHERE userName = ?";
 		$result = $this->executeUpdate($sql, array($username));
 		return count($result) == 1;
 	}
-	
-	public function resetStatus($username) 
+
+	public function resetStatus($username)
 	{
 		$sql = "UPDATE Users SET status = 0  WHERE userName = ?";
 		$result = $this->executeUpdate($sql, array($username));
 		return count($result) == 1;
 	}
-	
-	public function getUserStatus($name) 
+
+	public function getUserStatus($name)
 	{
 		$sql = "SELECT status FROM Users WHERE userName = ?";
         $result = $this->executeQuery($sql, array($name));
@@ -179,7 +179,6 @@ class Database
 		$status = $result['status'];
         return $status;
 	}
-	
 
     /**
     * Retunrs all items from the database.
