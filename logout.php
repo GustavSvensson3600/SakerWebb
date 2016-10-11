@@ -1,5 +1,9 @@
 
 <?php
+
+	if (!isset($_SESSION['login_user']))
+		header("location: index.php");
+
     $message = "";
 	if (isset($_SESSION['globalMessage'])) {
 		$message = $_SESSION['globalMessage'];

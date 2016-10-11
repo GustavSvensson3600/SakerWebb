@@ -13,11 +13,11 @@
 		<img class="src" src="D-logo-org-bw.png" /img>
 		<?php
 		if (!isset($_SESSION['login_user'])) {
-			include('login.php'); // Includes Login Script
+			//include('login.php'); // Includes Login Script
 			include('login_form.php');
 		}
 		else {
-			include('logout.php');
+			//include('logout.php');
 			include('logout_form.html');
 		}
 		
