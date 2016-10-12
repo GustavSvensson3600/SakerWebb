@@ -12,7 +12,7 @@ class Database
      */
     public function __construct()
     {
-        $ini = parse_ini_file('php.ini');
+        $ini = parse_ini_file('db.ini');
         $this->host = $ini['db_host'];
         $this->userName = $ini['db_user'];
         $this->password = $ini['db_password'];

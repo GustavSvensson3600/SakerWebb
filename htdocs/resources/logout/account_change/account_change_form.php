@@ -1,5 +1,5 @@
 <?php
-	include "session.php";
+	include "../../session.php";
 	include "account_change.php";
 ?>
 <!DOCTYPE html>
@@ -7,13 +7,13 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Account </title>
-		<link rel="stylesheet" href="Css.css">
+		<link rel="stylesheet" href="../../css/Css.css">
 	</head>
 	<body>
 		<div id="header">
-		<img class="src" src="D-logo-org-bw.png" /img>
+		<img class="src" src="../../img/D-logo-org-bw.png" /img>
 
-		<h3 class="center">Register</h3>
+		<h3 class="center">Change Account</h3>
 		</div>
 		<div id="body">
 		<center><form style="display:inline-block; float:center" method="post">

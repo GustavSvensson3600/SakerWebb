@@ -1,4 +1,8 @@
-<?php include("session.php");?>
+<?php 
+include("../session.php");
+if(!($_POST['CSRFToken'] === get_token()))
+	header("location: ../../index.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +24,7 @@
       ?><br><?php
     } 
 	?>
-	<form action="receipt.php">
+	<form action="../../index.php">
 		<input type="submit" value="Return">
 	</form>
 </body>

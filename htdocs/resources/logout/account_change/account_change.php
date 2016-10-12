@@ -1,13 +1,13 @@
 
 <?php
-	include "password_check.php";
+	include "../../utilities/password_check.php";
 	
 	if (isset($_SESSION['login_user'])) {
 	
 		$username = $_SESSION['login_user'];
 		$address = $_SESSION['user_address'];
 		$parser = $_SESSION['parser'];
-		$message = ""; // Variable To Store message Message
+		$message = ""; 
 		$password_change = false;
 		
 		if (isset($_POST['submit']) && $_POST['CSRFToken'] === get_token()) {
@@ -41,8 +41,8 @@
 				
 				if ($result) {
 					$_SESSION['globalMessage'] = "User has been updated";
-					header("location: index.php");
-					//$message = "User has been updated";
+					$_SESSION['user_address'] = $address;
+					header("location: ../../../index.php");
 				}
 				else {
 					$message = "User could not be updated";
@@ -52,6 +52,6 @@
 		}
 	}
 	else {
-		header("location: index.php");
+		header("location: ../../../index.php");
 	}
 ?>

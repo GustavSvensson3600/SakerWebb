@@ -1,9 +1,5 @@
 
 <?php
-
-	if (!isset($_SESSION['login_user']))
-		header("location: index.php");
-
     $message = "";
 	if (isset($_SESSION['globalMessage'])) {
 		$message = $_SESSION['globalMessage'];
@@ -12,13 +8,12 @@
 	
 	if (isset($_POST['logout'])) {
 		session_start();
-		// Destroying All Sessions
 		if(session_destroy()) {
-			header("location: index.php"); // Redirecting To Home Page
+			header("location: index.php");
 		}
 	}
 	
 	if (isset($_POST['change_account'])) {
-		header("location: account_change_form.php");
+		header("location: resources/logout/account_change/account_change_form.php");
 	}
 ?>

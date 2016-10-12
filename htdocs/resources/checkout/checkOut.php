@@ -1,4 +1,4 @@
-<?php include("session.php");?>
+<?php include("../session.php");?>
 <html>
 <head>
 
@@ -31,12 +31,13 @@
   </div>
   <div class="forms">
     <h3>Complete purchase</h3>
-    <form action="receipt.php">
+    <form method="post" action="receipt.php">
       Card number: <input type="text" name="CardNbr">
       Card Holder:  <input type="text" name="CardHolder"><br>
       year:  <input type="number" name="year">
       Month: <input type="number" name="Month"><br>
       CVC: <input type="number" name="CVC">
+	  <input name="CSRFToken" type="hidden" value="<?php echo get_token(); ?>">
       <input type="submit" value="submit">
     </form>
   </div>

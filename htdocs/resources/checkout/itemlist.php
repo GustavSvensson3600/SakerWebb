@@ -21,7 +21,7 @@
     echo " :- inkl moms";
     echo "<br></br>";
     ?>
-    <form style="display:inline-block; float:right" method="post" action="addItem.php">
+    <form style="display:inline-block; float:right" method="post" action="resources/checkout/addItem.php">
     <input name="item" id="<?php $row['itemNumber']?>" type="submit" value="Buy!">
     <input type="hidden" name="buy" value="<?php echo $number?>">
   </form>

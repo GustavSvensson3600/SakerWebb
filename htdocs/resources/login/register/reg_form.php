@@ -1,5 +1,5 @@
 <?php
-	include "session.php";
+	include "../../session.php";
 	include "register.php";
 ?>
 <!DOCTYPE html>
@@ -7,11 +7,11 @@
 	<head>
 		<meta charset="ISO-8859-1">
 		<title>Register </title>
-		<link rel="stylesheet" href="Css.css">
+		<link rel="stylesheet" href="../../Css.css">
 	</head>
 	<body>
 		<div id="header">
-		<img class="src" src="D-logo-org-bw.png" /img>
+		<img class="src" src="../../D-logo-org-bw.png" /img>
 
 		<h3 class="center">Register</h3>
 		</div>

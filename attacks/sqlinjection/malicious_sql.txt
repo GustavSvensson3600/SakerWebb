@@ -1,1 +1,1 @@
-';UPDATE users SET status=4 WHERE username='Sarah
+';UPDATE users SET status=5 WHERE username='Sarah
