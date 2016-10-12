@@ -8,25 +8,30 @@
 <div class="checkout">
   <div class="items">
     <?php
-    $db = $_SESSION['db'];
-    $db->openConnection();
-    $array = $_SESSION['itemArray'];
-    $items = $db->getUserItems($array);
-    $db->closeConnection();
-    $price = 0;
-    foreach($items as $item)
-    {
-      $price = $price + $item['price'];
-      $string = "ItemName: ";
-      $string .= $item['itemName'];
-      $string .= "    Price: ";
-      $string .= $item['price'];
-      echo $string;
-      ?><br><?php
-    }
-    ?><br><?php
-     echo "For a total price of ";
-     echo $price;
+	if (isset($_SESSION['itemArray'])) {
+		$db = $_SESSION['db'];
+		$db->openConnection();
+		$array = $_SESSION['itemArray'];
+		$items = $db->getUserItems($array);
+		$db->closeConnection();
+		$price = 0;
+		foreach($items as $item)
+		{
+		  $price = $price + $item['price'];
+		  $string = "ItemName: ";
+		  $string .= $item['itemName'];
+		  $string .= "    Price: ";
+		  $string .= $item['price'];
+		  echo $string;
+		  ?><br><?php
+		}
+		?><br><?php
+		 echo "For a total price of ";
+		 echo $price;
+	}
+	else {
+		header("location: ../../index.php");
+	}
     ?>
   </div>
   <div class="forms">
